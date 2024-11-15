@@ -1,9 +1,9 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://12n8dfp1geu3"]
 
 [ext_resource type="Shader" path="res://paletteLimiter.gdshader" id="1_gvggr"]
-[ext_resource type="Texture2D" uid="uid://dhvcsj36al70n" path="res://slso8-1x.png" id="2_pm1fa"]
+[ext_resource type="Texture2D" uid="uid://dc20le6qfdtjf" path="res://Assets/Colors/Screenshot 2024-11-15 003533.png" id="2_bqt31"]
 
 [resource]
 shader = ExtResource("1_gvggr")
-shader_parameter/num_colors = 8
-shader_parameter/PALETTE_TEXTURE = ExtResource("2_pm1fa")
+shader_parameter/num_colors = 10
+shader_parameter/PALETTE_TEXTURE = ExtResource("2_bqt31")

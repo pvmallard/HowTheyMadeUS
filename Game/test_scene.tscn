@@ -1,25 +1,35 @@
-[gd_scene load_steps=34 format=3 uid="uid://d1xyoh4u5a6lt"]
+[gd_scene load_steps=38 format=3 uid="uid://d1xyoh4u5a6lt"]
 
 [ext_resource type="Material" uid="uid://12n8dfp1geu3" path="res://paletteLimiter.tres" id="2_gxv6v"]
 [ext_resource type="Shader" path="res://paletteLimiter.gdshader" id="2_kwiu1"]
 [ext_resource type="PackedScene" uid="uid://ojxqqdumj2tf" path="res://Player1.tscn" id="2_xrcfw"]
+[ext_resource type="Texture2D" uid="uid://gdqyhci8fs7e" path="res://Assets/Themtiny.png" id="4_d2ha6"]
 [ext_resource type="PackedScene" uid="uid://cqpbsqbo85h73" path="res://Assets/test_obj/glTF/torch.gltf" id="4_dc3gi"]
 [ext_resource type="PackedScene" uid="uid://xakq5cl4y0qx" path="res://Assets/test_obj/glTF/stairs_long.gltf" id="4_e7fy7"]
 [ext_resource type="PackedScene" uid="uid://bs5m0chkmbg6e" path="res://Assets/test_obj/glTF/CommonTree_4.gltf" id="4_nxhpw"]
 [ext_resource type="PackedScene" uid="uid://djaqe4pxikj27" path="res://Assets/test_obj/glTF/wall_window_open.gltf" id="5_e1lww"]
 [ext_resource type="PackedScene" uid="uid://ba4egqoi4kh5s" path="res://Assets/test_obj/glTF/floor_tile_extralarge_grates.gltf" id="5_k3h26"]
 [ext_resource type="PackedScene" uid="uid://xc3rofkikbrc" path="res://Assets/test_obj/glTF/table_medium_broken.gltf" id="5_p7j8k"]
+[ext_resource type="Texture2D" uid="uid://bygr1c3kmrbmc" path="res://Assets/Them.png" id="5_woy6a"]
 [ext_resource type="PackedScene" uid="uid://decjm5yu4d3pr" path="res://Assets/test_obj/glTF/wall_scaffold.gltf" id="6_cd3r7"]
 [ext_resource type="PackedScene" uid="uid://d4m1nxkfgoodv" path="res://Assets/test_obj/glTF/stool.gltf" id="6_fbcaa"]
 [ext_resource type="PackedScene" uid="uid://cx3ydvkko3oc2" path="res://Assets/test_obj/glTF/pillar_decorated.gltf" id="6_fw3x3"]
+[ext_resource type="Texture2D" uid="uid://dm8qyfhmitqhx" path="res://Assets/Runes.png" id="6_ksjsu"]
 [ext_resource type="PackedScene" uid="uid://bron1kppu36mr" path="res://Assets/test_obj/glTF/key.gltf" id="6_o2ot1"]
+[ext_resource type="PackedScene" uid="uid://dvnxkdgang1fd" path="res://Assets/test_obj/glTF/Grass_Wispy_Tall.gltf" id="7_8cld8"]
 [ext_resource type="PackedScene" uid="uid://2f3lbukemhvj" path="res://Assets/test_obj/glTF/pillar.gltf" id="7_oitla"]
 [ext_resource type="PackedScene" uid="uid://btkji5c3mdw7v" path="res://Assets/test_obj/glTF/wall_arched.gltf" id="7_pu56x"]
 [ext_resource type="PackedScene" uid="uid://cn3ntcg0rkclk" path="res://Assets/test_obj/glTF/shelf_small_candles.gltf" id="7_wgbip"]
 [ext_resource type="PackedScene" uid="uid://bt733ho88xrh6" path="res://Assets/test_obj/glTF/crates_stacked.gltf" id="7_xm4ub"]
+[ext_resource type="PackedScene" uid="uid://cuv6fj24u3pdt" path="res://Assets/test_obj/glTF/Grass_Wispy_Short.gltf" id="8_5q51y"]
+[ext_resource type="PackedScene" uid="uid://bd7ognbc3c3sk" path="res://Assets/test_obj/glTF/Pine_2.gltf" id="8_m2j5s"]
 [ext_resource type="PackedScene" uid="uid://b3nv7af4ef05t" path="res://Assets/test_obj/glTF/column.gltf" id="8_qyaci"]
 [ext_resource type="PackedScene" uid="uid://dbihx5h2kgef0" path="res://Assets/test_obj/glTF/trunk_medium_B.gltf" id="8_skp4j"]
+[ext_resource type="PackedScene" uid="uid://cigl8x41jw6um" path="res://Assets/test_obj/glTF/Plant_1.gltf" id="9_80hm2"]
 [ext_resource type="PackedScene" uid="uid://cxndeubdgrb3m" path="res://Assets/test_obj/glTF/Rock_Medium_1.gltf" id="10_grs18"]
+[ext_resource type="PackedScene" uid="uid://d2dxhhrrhwkrq" path="res://Assets/test_obj/glTF/Plant_7.gltf" id="10_y383q"]
+[ext_resource type="PackedScene" uid="uid://b1h45j6gdeaa5" path="res://Assets/test_obj/glTF/TwistedTree_2.gltf" id="11_5u2qf"]
+[ext_resource type="PackedScene" uid="uid://c8bq8au65ol1k" path="res://Assets/test_obj/glTF/Mushroom_Common.gltf" id="13_uwa1h"]
 [ext_resource type="PackedScene" uid="uid://cuig8frucibyi" path="res://Assets/test_obj/glTF/chest.gltf" id="16_nqrv6"]
 [ext_resource type="PackedScene" uid="uid://sus246umnm8m" path="res://Assets/test_obj/glTF/ceiling_tile.gltf" id="17_rmls6"]
 [ext_resource type="PackedScene" uid="uid://cwha4q2khl5n" path="res://Assets/test_obj/glTF/barrier_column.gltf" id="18_gj5h0"]
@@ -41,32 +51,6 @@ size = Vector2(10, 10)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_pwuea"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ps1oq"]
-diffuse_mode = 3
-specular_mode = 1
-albedo_color = Color(0.854902, 0.384314, 0.827451, 1)
-metallic = 0.5
-roughness = 0.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_xeqjw"]
-material = SubResource("StandardMaterial3D_ps1oq")
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bccxg"]
-data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bwkuh"]
-diffuse_mode = 3
-specular_mode = 1
-albedo_color = Color(0.87451, 0.831373, 0.0901961, 1)
-metallic = 0.5
-roughness = 0.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_xdotu"]
-material = SubResource("StandardMaterial3D_bwkuh")
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_w63wd"]
-data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
-
 [node name="TestScene" type="Node3D"]
 
 [node name="Control" type="Control" parent="."]
@@ -77,6 +61,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+layer = 128
 
 [node name="ColorRect" type="ColorRect" parent="Control/CanvasLayer"]
 material = ExtResource("2_gxv6v")
@@ -85,6 +70,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Control"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/CanvasLayer2"]
+position = Vector2(67, 230)
+scale = Vector2(0.204225, 0.204225)
+texture = ExtResource("5_woy6a")
+region_enabled = true
+region_rect = Rect2(303.873, 297.667, 426.769, 436.513)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control/CanvasLayer2"]
+position = Vector2(447, 229)
+scale = Vector2(0.219657, 0.219657)
+texture = ExtResource("5_woy6a")
+region_enabled = true
+region_rect = Rect2(709.045, 238.978, 379.415, 420.143)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -2, 21, 19)
@@ -97,28 +98,43 @@ mesh = SubResource("PlaneMesh_et5fc")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_pwuea")
 
-[node name="RigidBody3D" type="StaticBody3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02387, -1.41449)
-mesh = SubResource("BoxMesh_xeqjw")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02387, -1.41449)
-shape = SubResource("ConcavePolygonShape3D_bccxg")
-
-[node name="RigidBody3D2" type="StaticBody3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02387, 1.87373)
-mesh = SubResource("BoxMesh_xdotu")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02387, 1.87373)
-shape = SubResource("ConcavePolygonShape3D_w63wd")
-
 [node name="Jamie" parent="." instance=ExtResource("2_xrcfw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2805, 0.962022, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.98519, -0.176177, -1.77593)
+texture = ExtResource("4_d2ha6")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 8.00611, 3.02546, -4.23869)
+visible = false
+texture = ExtResource("5_woy6a")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.997582, 3.02546, -6.51259)
+visible = false
+texture = ExtResource("6_ksjsu")
+
+[node name="Grass_Wispy_Tall" parent="." instance=ExtResource("7_8cld8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.32737, 0, 0)
+
+[node name="Pine_2" parent="Grass_Wispy_Tall" instance=ExtResource("8_m2j5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.3065, 0, -1.58478)
+
+[node name="Plant_1" parent="Grass_Wispy_Tall" instance=ExtResource("9_80hm2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3854, 0, 0)
+
+[node name="Plant_7" parent="Grass_Wispy_Tall" instance=ExtResource("10_y383q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.899497, 0, 1.87095)
+
+[node name="TwistedTree_2" parent="Grass_Wispy_Tall" instance=ExtResource("11_5u2qf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9961, 0, 1.15907)
+
+[node name="Grass_Wispy_Short" parent="Grass_Wispy_Tall" instance=ExtResource("8_5q51y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.753815, 0, 0)
+
+[node name="Mushroom_Common" parent="Grass_Wispy_Tall" instance=ExtResource("13_uwa1h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
 
 [node name="MiscObjs" type="Node3D" parent="."]
 
