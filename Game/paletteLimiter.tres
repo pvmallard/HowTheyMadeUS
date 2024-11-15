@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://12n8dfp1geu3"]
+
+[ext_resource type="Shader" path="res://paletteLimiter.gdshader" id="1_gvggr"]
+[ext_resource type="Texture2D" uid="uid://dhvcsj36al70n" path="res://slso8-1x.png" id="2_pm1fa"]
+
+[resource]
+shader = ExtResource("1_gvggr")
+shader_parameter/num_colors = 8
+shader_parameter/PALETTE_TEXTURE = ExtResource("2_pm1fa")
