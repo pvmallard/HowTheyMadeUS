@@ -161,9 +161,10 @@ script = ExtResource("1_8w76u")
 shape = SubResource("CapsuleShape3D_uhkuo")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.91708)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.97766)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0, 0)
 texture = ExtResource("2_frpbt")
 hframes = 48
 
