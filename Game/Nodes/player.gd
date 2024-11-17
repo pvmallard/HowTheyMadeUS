@@ -6,10 +6,15 @@ extends CharacterBody3D
 @onready var tool_use: AudioStreamPlayer = $ToolUse
 @onready var gunshot: AudioStreamPlayer = $Gunshot
 @onready var reload: AudioStreamPlayer = $Reload
+@onready var camera: Camera3D = $Camera3D
 
 
 const SPEED = 5.0
 const MOUSE_SENS = 0.5
+
+var bob_freq = 2.5
+var bob_amp = 0.01
+var t_bob = 0.0
 
 var can_tool = true
 var j_dead = false
@@ -50,6 +55,9 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("Left", "Right", "Forward", "Backward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
+		t_bob += delta * velocity.length() * float(is_on_floor())
+		camera.transform.origin += _headbob(t_bob)
+		
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
@@ -142,3 +150,11 @@ func _on_gun_animation_finished() -> void:
 func _on_axe_animation_finished() -> void:
 	$CanvasLayer/Tool/Axe.play("Idle")
 	can_tool = true
+
+	
+	
+func _headbob(time) -> Vector3:
+	var pos = Vector3.ZERO
+	pos.y = sin(time * bob_freq) * bob_amp
+	pos.x = cos(time * bob_freq / 2) * bob_amp
+	return pos

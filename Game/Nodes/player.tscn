@@ -1,31 +1,31 @@
 [gd_scene load_steps=19 format=3 uid="uid://b154tu0v55jsf"]
 
 [ext_resource type="Script" path="res://Nodes/player.gd" id="1_i86dc"]
-[ext_resource type="Texture2D" uid="uid://toib241jfr8d" path="res://Assets/Untitled_Artwork (15).png" id="2_ny4cl"]
+[ext_resource type="Texture2D" uid="uid://toib241jfr8d" path="res://Assets/Sprites/Untitled_Artwork (15).png" id="2_v0ae4"]
 [ext_resource type="AudioStream" uid="uid://baqhpu02ifxw5" path="res://Assets/Audio/SFX/376060__morganpurkis__mouth-gun.wav" id="3_le8vc"]
-[ext_resource type="Texture2D" uid="uid://4vnouy1ps18" path="res://Assets/Axe.png" id="3_um3qq"]
+[ext_resource type="Texture2D" uid="uid://b665nlqjhoea1" path="res://Assets/Sprites/Axe2.png" id="3_xkkes"]
 [ext_resource type="AudioStream" uid="uid://cyjtln53lwaxi" path="res://Assets/Audio/SFX/405538__nebulasnails__pistol-cock.wav" id="4_tjmof"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0a2of"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xnxef"]
-atlas = ExtResource("2_ny4cl")
+atlas = ExtResource("2_v0ae4")
 region = Rect2(0, 0, 597, 1668)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bdqea"]
-atlas = ExtResource("2_ny4cl")
+atlas = ExtResource("2_v0ae4")
 region = Rect2(597, 0, 597, 1668)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4xhvt"]
-atlas = ExtResource("2_ny4cl")
+atlas = ExtResource("2_v0ae4")
 region = Rect2(1194, 0, 597, 1668)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xmjxm"]
-atlas = ExtResource("2_ny4cl")
+atlas = ExtResource("2_v0ae4")
 region = Rect2(1791, 0, 597, 1668)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ytilg"]
-atlas = ExtResource("2_ny4cl")
+atlas = ExtResource("2_v0ae4")
 region = Rect2(0, 0, 597, 1668)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_00t2x"]
@@ -56,31 +56,31 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lkfwl"]
-atlas = ExtResource("3_um3qq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7arc"]
+atlas = ExtResource("3_xkkes")
 region = Rect2(0, 0, 1194, 834)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ytw3k"]
-atlas = ExtResource("3_um3qq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rcnl"]
+atlas = ExtResource("3_xkkes")
 region = Rect2(1194, 0, 1194, 834)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w2ac1"]
-atlas = ExtResource("3_um3qq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_rja3i"]
+atlas = ExtResource("3_xkkes")
 region = Rect2(0, 834, 1194, 834)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ew7t3"]
-atlas = ExtResource("3_um3qq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_5324e"]
+atlas = ExtResource("3_xkkes")
 region = Rect2(1194, 834, 1194, 834)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8djdx"]
-atlas = ExtResource("3_um3qq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ucdx"]
+atlas = ExtResource("3_xkkes")
 region = Rect2(0, 0, 1194, 834)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ta4cc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lkfwl")
+"texture": SubResource("AtlasTexture_g7arc")
 }],
 "loop": true,
 "name": &"Idle",
@@ -88,16 +88,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ytw3k")
+"texture": SubResource("AtlasTexture_0rcnl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w2ac1")
+"texture": SubResource("AtlasTexture_rja3i")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ew7t3")
+"texture": SubResource("AtlasTexture_5324e")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8djdx")
+"texture": SubResource("AtlasTexture_6ucdx")
 }],
 "loop": false,
 "name": &"Use",
@@ -146,7 +146,9 @@ animation = &"Use"
 position = Vector2(90, -20)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_ta4cc")
-animation = &"Idle"
+animation = &"Use"
+frame = 3
+frame_progress = 1.0
 
 [node name="Crosshair" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 8

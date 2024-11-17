@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d37auvqlv61sv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nid5h"]
+
+[node name="Interactable" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_nid5h")
+
+[node name="Area3D" type="Area3D" parent="."]
