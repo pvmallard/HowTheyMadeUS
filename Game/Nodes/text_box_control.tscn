@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdl0km2kxee7n"]
+
+[ext_resource type="Script" path="res://Nodes/text_box_control.gd" id="1_k52fb"]
+
+[node name="text_box_control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k52fb")
+
+[node name="text_box" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="text_box"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="text_box"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="text_box/MarginContainer"]
+layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="text_box"]
+
+[node name="LetterDispTimer" type="Timer" parent="."]

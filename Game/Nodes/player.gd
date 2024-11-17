@@ -32,6 +32,8 @@ var j_is_current = false;
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$CanvasLayer/Tool/Axe.visible = false
+	$CanvasLayer/Tool/Gun.play("Idle")
+	$CanvasLayer/Tool/Axe.play("Idle")
 	# connect animation_finished.connect(tool_anim_finished)
 	
 func _input(event):

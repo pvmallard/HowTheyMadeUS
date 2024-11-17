@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://b154tu0v55jsf"]
+[gd_scene load_steps=20 format=3 uid="uid://b154tu0v55jsf"]
 
 [ext_resource type="Script" path="res://Nodes/player.gd" id="1_i86dc"]
 [ext_resource type="Texture2D" uid="uid://toib241jfr8d" path="res://Assets/Sprites/Untitled_Artwork (15).png" id="2_v0ae4"]
 [ext_resource type="AudioStream" uid="uid://baqhpu02ifxw5" path="res://Assets/Audio/SFX/376060__morganpurkis__mouth-gun.wav" id="3_le8vc"]
 [ext_resource type="Texture2D" uid="uid://b665nlqjhoea1" path="res://Assets/Sprites/Axe2.png" id="3_xkkes"]
+[ext_resource type="AudioStream" uid="uid://dmqurr6bpydtk" path="res://Assets/Audio/SFX/axe.mp3" id="4_qvvek"]
 [ext_resource type="AudioStream" uid="uid://cyjtln53lwaxi" path="res://Assets/Audio/SFX/405538__nebulasnails__pistol-cock.wav" id="4_tjmof"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0a2of"]
@@ -165,6 +166,7 @@ grow_vertical = 2
 color = Color(1, 1, 1, 0.545098)
 
 [node name="ToolUse" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_qvvek")
 bus = &"SFX"
 
 [node name="Gunshot" type="AudioStreamPlayer" parent="."]

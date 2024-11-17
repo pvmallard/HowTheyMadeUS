@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://chnlwjrkfu313"
-path="res://.godot/imported/136781__mitchelk__fx021.wav-e23fe81a901fffe060b3ec114a28103f.sample"
+path="res://.godot/imported/zip.wav-580957f0e3fdf21890d98a91f07e02e9.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/Voices/136781__mitchelk__fx021.wav"
-dest_files=["res://.godot/imported/136781__mitchelk__fx021.wav-e23fe81a901fffe060b3ec114a28103f.sample"]
+source_file="res://Assets/Audio/Voices/zip.wav"
+dest_files=["res://.godot/imported/zip.wav-580957f0e3fdf21890d98a91f07e02e9.sample"]
 
 [params]
 
