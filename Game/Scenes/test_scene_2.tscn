@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://4m518cwvatb1"]
+[gd_scene load_steps=18 format=3 uid="uid://4m518cwvatb1"]
 
 [ext_resource type="PackedScene" uid="uid://2f3lbukemhvj" path="res://Assets/glTF/pillar.gltf" id="1_l0ls5"]
 [ext_resource type="Shader" path="res://paletteLimiter.gdshader" id="2_efcyt"]
 [ext_resource type="Material" uid="uid://12n8dfp1geu3" path="res://paletteLimiter.tres" id="3_1b5m4"]
-[ext_resource type="Texture2D" uid="uid://bygr1c3kmrbmc" path="res://Assets/Them.png" id="4_rn5xm"]
 [ext_resource type="PackedScene" uid="uid://b154tu0v55jsf" path="res://Nodes/player.tscn" id="5_2o7n5"]
+[ext_resource type="PackedScene" uid="uid://xbeql4i1273e" path="res://Nodes/interact_area.tscn" id="5_f5v8w"]
+[ext_resource type="AudioStream" uid="uid://b7dnvgkp8het4" path="res://Assets/Audio/Voices/hack.wav" id="6_7oj57"]
 [ext_resource type="PackedScene" uid="uid://qhnt1vgk7sg3" path="res://Nodes/creature.tscn" id="6_v4emy"]
 [ext_resource type="Texture2D" uid="uid://dhteb2nnh7soa" path="res://Assets/Untitled_Artwork (14).png" id="7_5fnpa"]
 
@@ -55,22 +56,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="Control"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Control/CanvasLayer2"]
-position = Vector2(67, 230)
-scale = Vector2(0.204225, 0.204225)
-texture = ExtResource("4_rn5xm")
-region_enabled = true
-region_rect = Rect2(303.873, 297.667, 426.769, 436.513)
-
-[node name="Sprite2D2" type="Sprite2D" parent="Control/CanvasLayer2"]
-position = Vector2(447, 229)
-scale = Vector2(0.219657, 0.219657)
-texture = ExtResource("4_rn5xm")
-region_enabled = true
-region_rect = Rect2(709.045, 238.978, 379.415, 420.143)
-
 [node name="Area" type="Node3D" parent="."]
 
 [node name="Ground" type="StaticBody3D" parent="Area"]
@@ -83,6 +68,11 @@ shape = SubResource("WorldBoundaryShape3D_tm7nj")
 
 [node name="pillar" parent="Area" instance=ExtResource("1_l0ls5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6906, 0, 0)
+
+[node name="Interact_area" parent="Area/pillar" instance=ExtResource("5_f5v8w")]
+interactableName = "pillar"
+lines = Array[String](["a pillar", "cool"])
+speech_sound = ExtResource("6_7oj57")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Area/pillar"]
 

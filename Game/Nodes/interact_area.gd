@@ -1,4 +1,4 @@
-extends StaticBody3D
+extends Area3D
 
 @export var interactableName: String = ""
 @export var lines: Array[String] = []
@@ -10,7 +10,8 @@ var is_interacting = false
 signal area_left()
 
 func _unhandled_input(event):
-	if event.is_action_pressed("interact"):
+	if event.is_action_pressed("Interact"):
+		print_debug("interact clicked")
 		if (can_interact && not is_interacting):
 			#hide any labels
 			is_interacting = true
@@ -19,13 +20,14 @@ func _unhandled_input(event):
 			#animate?
 
 
-func _on_interact_area_body_entered(body: Node3D) -> void:
-	if body.is_in_group("Player"):
+func _on_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		print_debug("entered")
 		can_interact = true
-		
 
-func _on_interact_area_body_exited(body: Node3D) -> void:
-	if body.is_in_group("Player"):
+
+func _on_body_exited(body: Node3D) -> void:
+	if body.is_in_group("player"):
 		can_interact = false
 		is_interacting = false
 		area_left.emit()

@@ -1,30 +1,133 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdl0km2kxee7n"]
+[gd_scene load_steps=8 format=3 uid="uid://bdl0km2kxee7n"]
 
 [ext_resource type="Script" path="res://Nodes/text_box_control.gd" id="1_k52fb"]
+[ext_resource type="Texture2D" uid="uid://ialymdvwf72h" path="res://Assets/Sprites/Ui.png" id="2_0bfcv"]
+[ext_resource type="Texture2D" uid="uid://bygr1c3kmrbmc" path="res://Assets/Them.png" id="2_p8fby"]
+[ext_resource type="Texture2D" uid="uid://dqyrob5t432ab" path="res://Assets/Sprites/Untitled_Artwork (6).PNG" id="3_44f2b"]
+[ext_resource type="FontFile" uid="uid://carlws135q5i3" path="res://Assets/Font/Crete_Round/CreteRound-Regular.ttf" id="3_t7myw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm0nm"]
+atlas = ExtResource("2_p8fby")
+region = Rect2(273.201, 307.319, 452.747, 440.604)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b57ao"]
+atlas = ExtResource("2_p8fby")
+region = Rect2(704.825, 245.426, 404.176, 378.156)
 
 [node name="text_box_control" type="Control"]
 layout_mode = 3
-anchors_preset = 15
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -109.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+mouse_filter = 2
 script = ExtResource("1_k52fb")
 
-[node name="text_box" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
 
-[node name="NinePatchRect" type="NinePatchRect" parent="text_box"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+clip_contents = true
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 39.5
+offset_right = 100.0
+offset_bottom = 139.5
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2
+texture = SubResource("AtlasTexture_lm0nm")
+expand_mode = 5
+stretch_mode = 6
 
-[node name="MarginContainer" type="MarginContainer" parent="text_box"]
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 39.5
+offset_bottom = 139.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer2"]
 layout_mode = 2
+texture = SubResource("AtlasTexture_b57ao")
+expand_mode = 4
+stretch_mode = 6
 
-[node name="Label" type="Label" parent="text_box/MarginContainer"]
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="text_box" type="MarginContainer" parent="CanvasLayer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.5
+offset_top = 61.5
+offset_right = 18.5
+offset_bottom = 117.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer2/text_box"]
+modulate = Color(0.0807834, 0.0807833, 0.0807833, 1)
 layout_mode = 2
+texture = ExtResource("3_44f2b")
+region_rect = Rect2(733.864, 924.313, 110.793, 33.4357)
+patch_margin_left = 12
+patch_margin_top = 27
+patch_margin_right = 13
+patch_margin_bottom = 28
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="text_box"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2/text_box"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2/text_box/MarginContainer"]
+position = Vector2(366.667, 250)
+scale = Vector2(0.666667, 0.666667)
+texture = ExtResource("2_0bfcv")
+region_enabled = true
+region_rect = Rect2(1722.1, 897.334, 74.0513, 79.8975)
+
+[node name="Label" type="Label" parent="CanvasLayer2/text_box/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("3_t7myw")
+theme_override_font_sizes/font_size = 16
+text = "."
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer2/text_box"]
 
 [node name="LetterDispTimer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(215, -16)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_p8fby")
+region_enabled = true
+region_rect = Rect2(232.668, 178.548, 913.537, 664.898)

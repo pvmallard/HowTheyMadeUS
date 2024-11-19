@@ -8,6 +8,9 @@ extends CharacterBody3D
 @onready var reload: AudioStreamPlayer = $Reload
 @onready var camera: Camera3D = $Camera3D
 
+@onready var journal: Control = $Journal
+
+
 
 const SPEED = 5.0
 const MOUSE_SENS = 0.5
@@ -39,6 +42,7 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * MOUSE_SENS
+
 	
 func _process(delta):
 	if Input.is_action_just_pressed("Exit"):
@@ -49,6 +53,12 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("Tool"):
 		useTool()
+		
+	if Input.is_action_just_pressed("Journal"):
+		if journal.is_open:
+			journal.close()
+		else:
+			journal.open()
 
 func _physics_process(delta: float) -> void:
 	if j_dead and y_dead:
