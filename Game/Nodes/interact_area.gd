@@ -9,8 +9,8 @@ var is_interacting = false
 
 signal area_left()
 
-func _unhandled_input(event):
-	if event.is_action_pressed("Interact"):
+func _process(delta):
+	if Input.is_action_just_pressed("Interact"):
 		print_debug("interact clicked")
 		if (can_interact && not is_interacting):
 			#hide any labels

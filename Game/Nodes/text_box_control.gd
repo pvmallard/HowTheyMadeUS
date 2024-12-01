@@ -1,9 +1,9 @@
 extends Control
 
-@onready var label = $text_box/MarginContainer/Label
+@onready var label = $CanvasLayer2/text_box/MarginContainer/Label
 @onready var timer = $LetterDispTimer
-@onready var audio_player = $text_box/AudioStreamPlayer
-@onready var text_box = $text_box
+@onready var audio_player = $CanvasLayer2/text_box/AudioStreamPlayer
+@onready var text_box = $CanvasLayer2/text_box
 
 const MAX_WIDTH = 256
 
@@ -48,13 +48,10 @@ func display_text(text_to_display: String, speech_sfx: AudioStream):
 	_display_letter()
 	
 func _display_letter():
-#	print_debug(letter_index)
 	label.text += text[letter_index]
-#	print_debug(label.text)
 	
 	letter_index += 1
 	if letter_index >= text.length():
-#		print_debug("done with line")
 		finished_displaying.emit()
 #		label.text += " >"
 		return
@@ -79,5 +76,5 @@ func _display_letter():
 
 
 func _on_letter_disp_timer_timeout() -> void:
-#	print_debug("display")
+	print_debug("display")
 	_display_letter()

@@ -48,10 +48,12 @@ func _end_dialogue():
 	
 func _unhandled_input(event):
 	if (
-		event.is_action_pressed("interact") &&
+		event.is_action_pressed("Interact") &&
 		is_dialog_active &&
 		can_advance_line
 	):
+		print_debug("Interact, dialogue active, can advance")
+		
 		if is_instance_valid(text_box):
 			text_box.queue_free()
 		
