@@ -1,63 +1,58 @@
-[gd_scene load_steps=8 format=3 uid="uid://ce88rk7q0oxdq"]
+[gd_scene load_steps=11 format=3 uid="uid://ce88rk7q0oxdq"]
 
 [ext_resource type="Script" path="res://Nodes/journal.gd" id="1_jwwvr"]
 [ext_resource type="Texture2D" uid="uid://dgj1klfal7kr6" path="res://Assets/Untitled_Artwork (16).png" id="2_lrsc3"]
+[ext_resource type="Texture2D" uid="uid://dqyrob5t432ab" path="res://Assets/Sprites/Untitled_Artwork (6).PNG" id="3_3tn7c"]
 [ext_resource type="AudioStream" uid="uid://dd8e6vikb3bt1" path="res://Assets/Audio/SFX/journal.wav" id="3_adlsk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t0qla"]
 atlas = ExtResource("2_lrsc3")
 region = Rect2(-1.41498, 541.498, 2392.43, 1124.06)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_it1ri"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp2op"]
+atlas = ExtResource("3_3tn7c")
+region = Rect2(729, 920.5, 115, 41)
+
 [sub_resource type="Animation" id="Animation_nhf8i"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/MarginContainer:position")
+tracks/0/path = NodePath("CanvasLayer/MarginContainer:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 137)]
+"update": 1,
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/MarginContainer:visible")
+tracks/1/path = NodePath("CanvasLayer/MarginContainer:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector2(0, 147)]
 }
 
 [sub_resource type="Animation" id="Animation_idcui"]
 resource_name = "open"
 length = 0.2
 step = 0.05
-tracks/0/type = "value"
+tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/MarginContainer:position")
+tracks/0/path = NodePath("AudioStreamPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 300), Vector2(0, 137)]
-}
-tracks/1/type = "audio"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -65,18 +60,30 @@ tracks/1/keys = {
 }],
 "times": PackedFloat32Array(0)
 }
-tracks/1/use_blend = true
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/MarginContainer:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/MarginContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.05),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/MarginContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 500), Vector2(0, 147)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4x88x"]
@@ -96,7 +103,7 @@ mouse_filter = 2
 script = ExtResource("1_jwwvr")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 5
+layer = 10
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 clip_contents = true
@@ -105,17 +112,31 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 137.0
-offset_right = 512.0
-offset_bottom = 237.0
+offset_top = -141.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2
+mouse_filter = 0
 texture = SubResource("AtlasTexture_t0qla")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="Suf" type="Area2D" parent="CanvasLayer/MarginContainer/TextureRect"]
+position = Vector2(358, 73)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/MarginContainer/TextureRect/Suf"]
+modulate = Color(0, 0, 0, 0.741176)
+position = Vector2(14, 13)
+shape = SubResource("RectangleShape2D_it1ri")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/TextureRect/Suf"]
+modulate = Color(1, 1, 1, 0.247059)
+position = Vector2(13, 13)
+scale = Vector2(0.266716, 1.01996)
+texture = SubResource("AtlasTexture_dp2op")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
@@ -123,3 +144,6 @@ stretch_mode = 5
 libraries = {
 "": SubResource("AnimationLibrary_4x88x")
 }
+
+[connection signal="input_event" from="CanvasLayer/MarginContainer/TextureRect/Suf" to="." method="_on_suf_input_event"]
+[connection signal="mouse_exited" from="CanvasLayer/MarginContainer/TextureRect/Suf" to="." method="_on_suf_mouse_exited"]

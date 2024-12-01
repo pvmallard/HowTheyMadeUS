@@ -4,9 +4,9 @@
 [ext_resource type="Shader" path="res://paletteLimiter.gdshader" id="2_efcyt"]
 [ext_resource type="Material" uid="uid://12n8dfp1geu3" path="res://paletteLimiter.tres" id="3_1b5m4"]
 [ext_resource type="PackedScene" uid="uid://b154tu0v55jsf" path="res://Nodes/player.tscn" id="5_2o7n5"]
+[ext_resource type="AudioStream" uid="uid://c2cqe5doj58od" path="res://Assets/Audio/Voices/quick.wav" id="5_dkx4p"]
 [ext_resource type="PackedScene" uid="uid://xbeql4i1273e" path="res://Nodes/interact_area.tscn" id="5_f5v8w"]
-[ext_resource type="AudioStream" uid="uid://b7dnvgkp8het4" path="res://Assets/Audio/Voices/hack.wav" id="6_7oj57"]
-[ext_resource type="PackedScene" uid="uid://qhnt1vgk7sg3" path="res://Nodes/creature.tscn" id="6_v4emy"]
+[ext_resource type="PackedScene" uid="uid://bkofrdor63uim" path="res://Nodes/portal.tscn" id="6_kv842"]
 [ext_resource type="Texture2D" uid="uid://dhteb2nnh7soa" path="res://Assets/Untitled_Artwork (14).png" id="7_5fnpa"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_swg3p"]
@@ -72,7 +72,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6906, 0, 0)
 [node name="Interact_area" parent="Area/pillar" instance=ExtResource("5_f5v8w")]
 interactableName = "pillar"
 lines = Array[String](["a pillar", "cool"])
-speech_sound = ExtResource("6_7oj57")
+speech_sound = ExtResource("5_dkx4p")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Area/pillar"]
 
@@ -119,10 +119,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.30667, 0, 5.93058)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area/pillar6/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ja764")
 
-[node name="Player" parent="." instance=ExtResource("5_2o7n5")]
+[node name="portal" parent="." instance=ExtResource("6_kv842")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2089, 0.5, -9.84851)
 
-[node name="Creature" parent="." instance=ExtResource("6_v4emy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -8.14907)
+[node name="Player" parent="." instance=ExtResource("5_2o7n5")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_tb3hd")
@@ -133,6 +133,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3, 6)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -11)
+visible = false
 texture = ExtResource("7_5fnpa")
 
 [editable path="Area/pillar"]

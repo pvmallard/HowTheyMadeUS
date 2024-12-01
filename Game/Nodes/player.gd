@@ -26,7 +26,7 @@ var y_dead = false
 var j_health = 15
 var y_health = 15
 
-var j_is_current = false;
+var j_is_current = true;
 
 # both - walk/sneak, run, crouch, use tool, investigate
 # jackie - hack
@@ -34,13 +34,14 @@ var j_is_current = false;
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	$CanvasLayer/Tool/Axe.visible = false
+	$CanvasLayer/Tool/Axe.visible = true
+	$CanvasLayer/Tool/Gun.visible = false
 	$CanvasLayer/Tool/Gun.play("Idle")
 	$CanvasLayer/Tool/Axe.play("Idle")
 	# connect animation_finished.connect(tool_anim_finished)
 	
 func _input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and not journal.is_open:
 		rotation_degrees.y -= event.relative.x * MOUSE_SENS
 
 	
@@ -51,14 +52,12 @@ func _process(delta):
 	if Input.is_action_just_pressed("Swap"):
 		swap()
 	
-	if Input.is_action_just_pressed("Tool"):
+	if Input.is_action_just_pressed("Tool") and not journal.is_open:
 		useTool()
 		
 	if Input.is_action_just_pressed("Journal"):
-		if journal.is_open:
-			journal.close()
-		else:
-			journal.open()
+		journalOnOff()
+			
 
 func _physics_process(delta: float) -> void:
 	if j_dead and y_dead:
@@ -152,6 +151,25 @@ func swap():
 		$CanvasLayer/Tool/Gun.visible = false
 		$CanvasLayer/Tool/Axe.visible = true
 		
+func journalOnOff():
+	if not j_is_current:
+		return
+	
+	if journal.is_open:
+		journal.close()
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		if j_is_current:
+			$CanvasLayer/Tool/Gun.visible = false
+			$CanvasLayer/Tool/Axe.visible = true
+		else:
+			$CanvasLayer/Tool/Gun.visible = true
+			$CanvasLayer/Tool/Axe.visible = false
+	else:
+		journal.open()
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		$CanvasLayer/Tool/Gun.visible = false
+		$CanvasLayer/Tool/Axe.visible = false
+		
 
 
 func _on_gun_animation_finished() -> void:
@@ -170,3 +188,4 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * bob_freq) * bob_amp
 	pos.x = cos(time * bob_freq / 2) * bob_amp
 	return pos
+	

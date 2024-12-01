@@ -123,6 +123,7 @@ vertical_alignment = 1
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer2/text_box"]
 
 [node name="LetterDispTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -131,3 +132,5 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_p8fby")
 region_enabled = true
 region_rect = Rect2(232.668, 178.548, 913.537, 664.898)
+
+[connection signal="timeout" from="LetterDispTimer" to="." method="_on_letter_disp_timer_timeout"]
